@@ -1,4 +1,3 @@
-class Question < ActiveRecord::Base
-  belongs_to :deck
+class Question < ApplicationRecord
   has_many :answers
 end
