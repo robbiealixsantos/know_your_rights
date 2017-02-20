@@ -1,0 +1,39 @@
+$main-blue: #16214B;
+$surf-blue: #50E3C2;
+$main-red: #962828;
+
+* {
+  background-color: $main-blue;
+  color: #FFF;
+}
+
+button {
+  background-color: $surf-blue;
+}
+
+footer {
+  height: 70px;
+  background-color: $main-red;
+}
+
+img {
+  width: 40%;
+  margin-left: 20px;
+}
+
+.main-content {
+  padding: 100px;
+}
+
+.question-area {
+  color: $main-blue;
+  width: 100%;
+  height: 400px;
+  background-color: #FFF;
+  border-radius: 5px;
+  border: 10px solid $surf-blue;
+}
+
+.more-resources {
+  margin-top: 50px;
+}

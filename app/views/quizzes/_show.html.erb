@@ -1,4 +1,4 @@
-<%= @question.question %>
-  <% @question.answers.each do |answer| %>
-    <%= answer.answer %>
+<h1><%= @question.question %></h1>
+ <ul> <% @question.answers.each do |answer| %> </ul>
+    <li><%= answer.answer %></li>
   <% end %>
