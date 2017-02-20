@@ -1,7 +1,10 @@
 class QuizzesController < ApplicationController
   def index
-  end 
-  
+    questions = Question.all
+    @question = questions.sample
+  end
+
   def show
-  end 
+
+  end
 end
