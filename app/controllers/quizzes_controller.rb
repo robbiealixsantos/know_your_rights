@@ -4,5 +4,7 @@ class QuizzesController < ApplicationController
     @question = questions.sample
   end
 
-
+  def create
+    Question.check_answer(response)
+  end
 end
