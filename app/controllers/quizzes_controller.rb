@@ -4,7 +4,5 @@ class QuizzesController < ApplicationController
     @question = questions.sample
   end
 
-  def show
 
-  end
 end

@@ -1,4 +1,11 @@
-<h1><%= @question.question %></h1>
- <ul> <% @question.answers.each do |answer| %> </ul>
-    <li><%= answer.answer %></li>
-  <% end %>
+<div id="question-box">
+  <h1><%= @question.question %></h1>
+  <form class="question" action="/">
+    <% @question.answers.each do |answer| %>
+    <br>
+    <input type="radio" name="response" value="<%= answer.answer %>" data-waschecked="false"><%= answer.answer %>
+    <% end %>
+    <br>
+    <input type="submit" value="Submit Answer">
+  </form>
+</div>
