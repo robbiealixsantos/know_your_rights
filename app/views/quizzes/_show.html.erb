@@ -1,13 +1,15 @@
 <div id="question-box">
   <h1><%= @question.question %></h1>
-  <form accept-charset="UTF-8" class="question" method="post" action="/quizzes">
-  <input name="utf8" type="hidden" value="&#x2713;" />
-  <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts=" />
-    <% @question.answers.each do |answer| %>
-    <br>
-    <input type="radio" name="response" value="<%= answer.correct %>" data-waschecked="false"><%= answer.answer %>
-    <% end %>
-    <br>
-    <input type="submit" value="Submit Answer">
-  </form>
+  <%= form_for Question.new, remote: true do |f| %>
+    <div class="form-group">
+      <% @question.answers.each do |answer| %>
+      <br>
+        <%= f.radio_button :answer, answer.answer, :checked => false %>
+         <%= label :answer, answer.answer %>
+      <% end %>
+    </div>
+    <div class="form-group">
+      <%= f.submit 'Submit' %>
+    </div>
+  <% end %>
 </div>
