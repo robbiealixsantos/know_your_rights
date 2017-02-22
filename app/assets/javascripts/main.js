@@ -24,6 +24,26 @@ var answerSubmitAction = function(){
         event.preventDefault();
 
         console.log("in the click!");
+
+        var answerSubmitTarget = $(this);
+        var url = answerSubmitTarget.attr('action');
+        var method = answerSubmitTarget.attr('method');
+        var data = answerSubmitTarget.serialize();
+
+        var request = $.ajax({
+            url: url,
+            method: method,
+            data: data
+        });
+
+        request.done(function(response){
+            console.log("success");
+            $('#question-box').load('/ #question-box')
+        });
+
+        request.fail(function(response){
+            console.log("fail");
+        });
     });
 };
 
