@@ -5,6 +5,7 @@ class QuizzesController < ApplicationController
   end
 
   def create
-    Question.check_answer(response)
+    user_response = params[:response]
+    Question.check_answer(user_response)
   end
 end

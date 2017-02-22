@@ -20,7 +20,11 @@ var radioButtonToggle = function(){
 };
 
 var answerSubmitAction = function(){
+    $(".question").on("submit", function(event){
+        event.preventDefault();
 
+        console.log("in the click!");
+    });
 };
 
 
