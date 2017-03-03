@@ -1,0 +1,16 @@
+<div id="question-box">
+  <h1><%= @question.question %></h1>
+  <%= form_for Question.new, remote: true do |f| %>
+    <div class="form-group">
+      <% @question.answers.each do |answer| %>
+        <%= f.radio_button :answer, answer.answer, :checked => false %>
+         <%= label :answer, answer.answer %><br>
+      <% end %>
+      <%= f.hidden_field :question_id, :value => @question.id%>
+    </div>
+    <div class="form-group">
+      <%= f.submit 'Submit' %>
+    </div>
+  <% end %>
+</div>
+
