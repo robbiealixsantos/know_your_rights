@@ -4,6 +4,11 @@ class QuestionsController < ApplicationController
     @question = questions.sample
   end
 
+  def show
+    questions = Question.all
+    @question = questions.sample
+  end 
+
   def new
     @questions = Question.all
   end 

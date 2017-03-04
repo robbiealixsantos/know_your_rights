@@ -1,2 +1,3 @@
-$('.question-area').append("<%= j render partial: 'show', locals: {question: @question} %>");
-
+$('.answer').remove(<%= @answer %>);
+$('#question-box').replaceWith("<%= j render partial: 'show', locals: {question: @question} %>");
+$('#next-button').hide();
